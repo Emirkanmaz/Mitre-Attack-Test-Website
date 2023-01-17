@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<a href="/Attack/Details" style="background:yellow; top: 11%;left: 76%; position: absolute; width: 120px;" class="nav nav-pills nav-justified mb-3 nav-item nav-link active" id="tab-login">Ataklar</a>
+
+<p id="infoOne" style=" font-weight:bold; position: absolute; display: block; top: 20%; left: 3%; width: 1000px; height: 400px; margin-top: 50px; font-size: 36px; color: #F9F6EE;">Test 1 - Panodan Yararlanma:</p>
+<p id="infoOne" style=" position: absolute; display: block; top: 27%; left: 28%; width: 1000px; height: 400px; margin-top: 50px; font-size: 28px; color: #F9F6EE;">Zararlı komutları yürütmek veya verileri yönlendirmek için herhangi bir PowerShell komutunun sonucunu panoya aktarma ve toplama (T1115 - Clipboard Data).</p>
+<p id="t1command" style="display: block;">PowerShell Command: "echo Get-Process | clip Get-Clipboard | iex"</p>
+
+<p id="infoOne" style=" font-weight:bold; position: absolute; display: block; top: 45%; left: 3%; width: 1000px; height: 400px; margin-top: 50px; font-size: 36px; color: #F9F6EE;">Test 2 - Ekran Yakalama:</p>
+<p id="infoOne" style=" position: absolute; display: block; top: 53%; left: 28%; width: 1000px; height: 400px; margin-top: 50px; font-size: 28px; color: #F9F6EE;">Hasımlar, hayati bilgilerinizi çalmak için bilgisayarınızın ekran görüntüleri alabilirler (T1113 - Screen Capture).</p>
+<p id="t2command" style="display: block; top:53%">PowerShell Command: "nircmd.exe cmdwait 2000 savescreenshot "./screenshot.png"    -Wait 2 seconds, and then save the current screen to ss.png"</p>

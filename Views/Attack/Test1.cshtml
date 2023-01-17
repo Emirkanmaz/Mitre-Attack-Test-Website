@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Test1";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    if (Session["id"] == null)
+    {
+        Response.Redirect("~/Home/Index");
+    }
+}
+<a href="/Attack/Index" style="background:yellow; top: 5%;left: 76%; position: absolute; width: 120px;" class="nav nav-pills nav-justified mb-3 nav-item nav-link active" id="tab-login">TEST</a>
+
+<div id="middle">
+    <div id="sideNav" style="display: block;">
+        <img src="./img/background.jpg" width="1920" id="hack" style="display: none;">
+        <p class="p">Mitre Attack Tests</p>
+
+        <nav class="nav">
+            <ul class="nav-items">
+                <li id="liOne" style="background-color:yellow;">
+                    <a style="display:block;" href="~/Attack/Test1">T1115</a>
+                </li>
+                <li id="liTwo" style="background-color:rgb(249, 246, 238);" href="~/Attack/Test2">
+                    <a style="display:block;" href="~/Attack/Test2">T1113</a>
+                </li>
+                <li id="liFive" style="background-color: rgb(249, 246, 238); height: 107px ">
+                    <a style="display:block;" href="~/Attack/Index">Geçmiş Ataklar</a>
+                </li>
+            </ul>
+        </nav>
+        <div >
+            <h1 id="headline" style="display: block;">Test 1 - Panodan Yararlanma</h1>
+            <p id="infoOne" style="display: block;">Zararlı komutları yürütmek veya verileri yönlendirmek için herhangi bir PowerShell komutunun sonucunu panoya aktarma ve toplama (T1115 - Clipboard Data).</p>
+            <p id="t1command" style="display: block;">PowerShell Command: "echo Get-Process | clip Get-Clipboard | iex"</p>
+            
+            @using (Html.BeginForm("RunPowerShellScriptTest1", "Attack", FormMethod.Post))
+            {
+                <table style=" position: absolute; top: 60%; left: 50%; scale: 2; width: 200px;">
+                    <td>
+                        <input type="submit" class="btn btn-default" style="" id="tab-login" />
+                    </td>
+                </table>
+
+            }
+        </div>
+    </div>
+</div>

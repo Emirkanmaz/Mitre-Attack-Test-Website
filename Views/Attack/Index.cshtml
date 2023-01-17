@@ -1,0 +1,112 @@
+﻿@model IEnumerable<mitredeneme.Models.Entity.TBL_sonuc>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    if (Session["id"] == null)
+    {
+        Response.Redirect("~/Home/Index");
+    }
+}
+<style>
+    table, th, td {
+        border: 1px solid white;
+        border-collapse: collapse;
+
+    }
+
+    th, td {
+        background-color: #96D4D4;
+    }
+
+    .fixed_header {
+        width: 400px;
+        table-layout: fixed;
+        border-collapse: collapse;
+    }
+
+    .fixed_header tbody {
+        display: block;
+        width: 100%;
+        overflow: auto;
+        height: 100px;
+    }
+
+    .fixed_header thead tr {
+        display: block;
+    }
+
+    .fixed_header thead {
+        background: black;
+        color: #fff;
+    }
+
+    .fixed_header th,
+    .fixed_header td {
+        padding: 5px;
+        text-align: left;
+        width: 200px;
+    }
+</style>
+
+
+<a href="/Attack/Index" style="background:yellow; top: 5%;left: 76%; position: absolute; width: 120px;" class="nav nav-pills nav-justified mb-3 nav-item nav-link active" id="tab-login">TEST</a>
+
+<div id="middle">
+    <div id="sideNav" style="display: block;">
+        <p class="p">Mitre Attack Tests</p>
+
+        <nav class="nav">
+            <ul class="nav-items">
+                <li id="liOne" style="background-color: rgb(249, 246, 238);">
+                    <a style="display:block;" href="~/Attack/Test1">T1115</a>
+                </li>
+                <li id="liTwo" style="background-color: rgb(249, 246, 238);">
+                    <a style="display:block;" href="~/Attack/Test2">T1113</a>
+                </li>
+                <li id="liFive" style="background-color:yellow; height: 107px ">
+                    <a style="display:block;" href="~/Attack/Index">Geçmiş Ataklar</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+<div style="overflow-x: auto; position: absolute; top: 30%; left: 40%;" class="text-center mb-3">
+    <table>
+        <tr>
+
+            <th>
+                TEST-T1115
+            </th>
+            <th>
+                TEST-T1113
+            </th>
+            <th>
+                TARİH
+            </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                @if ((string)Session["username"] == item.kullaniciAdi)
+                {
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.test1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.test2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.time)
+                    </td>
+                }
+            </tr>
+        }
+    </table>
+
+
+</div>
+
+
+

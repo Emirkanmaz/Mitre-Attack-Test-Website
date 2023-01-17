@@ -1,0 +1,160 @@
+﻿@model mitredeneme.Models.Entity.TBL_kisi
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    if (Session["id"] != null)
+    {
+        Response.Redirect("~/Attack/Index");
+    }
+}
+<style>
+    .field-validation-error {
+        color: yellow;
+        font-weight: bolder;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    label {
+        color: #F9F6EE;
+        font-weight: bolder;
+        font-family: 'Montserrat', sans-serif;
+    }
+</style>
+
+<a href="/Home/Index" style="background:yellow;top: 5%;left: 76%; position: absolute; width: 120px;" class="nav nav-pills nav-justified mb-3 nav-item nav-link active" id="tab-login">Ana Sayfa</a>
+
+<div class="col-md-3" id="myForm">
+    <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
+        <li class="nav-item" role="presentation">
+            <a href="/Home" class="nav nav-pills nav-justified mb-3 nav-item nav-link active" id="tab-login">Giriş Yap</a>
+        </li>
+
+        <!--
+            <li class="nav-item" role="presentation">
+                <a
+                class="nav-link active"
+                id="tab-login"
+                data-mdb-toggle="pill"
+                href="/a.html"
+                role="tab"
+                aria-controls="pills-login"
+                aria-selected="true">
+                Giriş
+                </a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active"
+                id="tab-register"
+                data-mdb-toggle="pill"
+                href="#pills-register"
+                role="tab"
+                aria-controls="pills-register"
+                aria-selected="false"
+                tabindex="-1">Kayıt Ol
+                </a>
+            </li>
+        -->
+
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
+            <form>
+                <div class="text-center mb-3">
+                    <p id="textOne">Bunları kullanarak giriş yapabilirsin:</p>
+                    <a class="btn btn-secondary btn-floating mx-1" href="https://www.facebook.com/">
+                        <i class="fab fa-facebook-f"></i>
+                    </a><a class="btn btn-secondary btn-floating mx-1" href="https://github.com/login">
+                        <i class="fab fa-github"></i>
+                    </a><a class="btn btn-secondary btn-floating mx-1" href="https://accounts.google.com/">
+                        <i class="fab fa-google"></i>
+                    </a><a class="btn btn-secondary btn-floating mx-1" href="https://twitter.com/">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </form>
+        </div>
+        <!--
+        <div class="form-outline mb-4">
+            <input type="text" id="registerName" class="form-control" name="isim">
+            <label class="form-label" for="registerName" id="labelThree">İsim</label>
+        </div>
+        <div class="form-outline mb-4">
+            <input type="text" id="registerUsername" class="form-control" name="kullaniciAdi">
+            <label class="form-label" for="registerUsername" id="labelFour">Kullanıcı Adı</label>
+        </div>
+        <div class="form-outline mb-4">
+            <input type="email" id="registerEmail" class="form-control" name="email">
+            <label class="form-label" for="registerEmail" id="labelFive">E-mail</label>
+        </div>
+        <div class="form-outline mb-4">
+            <input type="password" id="registerPassword" class="form-control" name="sifre">
+            <label class="form-label" for="registerPassword" id="labelSix">Şifre</label>
+        </div>
+        <div class="form-outline mb-4">
+            <input type="password" id="registerRepeatPassword" class="form-control">
+            <label class="form-label" for="registerRepeatPassword" id="labelSeven">Şifreyi tekrarla</label>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block mb-3" id="buttonTwo">Kayıt</button>
+         -->
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.isim, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                    @Html.EditorFor(model => model.isim, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.isim, "", new { @class = "" })
+
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.kullaniciAdi, htmlAttributes: new { @class = "control-label" })
+
+                    @Html.EditorFor(model => model.kullaniciAdi, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.kullaniciAdi, "", new { @class = "" })
+
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                    @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.email, "", new { @class = "" })
+
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.sifre, htmlAttributes: new { @class = "control-label col-md-2" })
+
+                    @Html.EditorFor(model => model.sifre, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.sifre, "", new { @class = "" })
+
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.confirmPassword, htmlAttributes: new { @class = "control-label" })
+
+                    @Html.EditorFor(model => model.confirmPassword, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.confirmPassword, "", new { @class = "" })
+
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Kayıt Ol" class="btn btn-default" style="margin-top:15px;" id="tab-login" />
+                    <label class="field-validation-error">@ViewBag.SuccessMessage</label>
+                    <label class="field-validation-error">@ViewBag.DuplicateMessage</label>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

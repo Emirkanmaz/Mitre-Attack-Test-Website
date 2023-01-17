@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbdenemeModel2StoreContainer" CdmEntityContainer="dbdenemeEntities2">
+    <EntitySetMapping Name="TBL_sonuc">
+      <EntityTypeMapping TypeName="dbdenemeModel2.TBL_sonuc">
+        <MappingFragment StoreEntitySet="TBL_sonuc">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="kullaniciAdi" ColumnName="kullaniciAdi" />
+          <ScalarProperty Name="test1" ColumnName="test1" />
+          <ScalarProperty Name="test2" ColumnName="test2" />
+          <ScalarProperty Name="time" ColumnName="time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

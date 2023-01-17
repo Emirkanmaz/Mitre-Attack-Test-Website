@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "Test2";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    if (Session["id"] == null)
+    {
+        Response.Redirect("~/Home/Index");
+    }
+}
+<a href="/Attack/Index" style="background:yellow; top: 5%;left: 76%; position: absolute; width: 120px;" class="nav nav-pills nav-justified mb-3 nav-item nav-link active" id="tab-login">TEST</a>
+
+<div id="middle">
+    <div id="sideNav" style="display: block;">
+        <img src="./img/background.jpg" width="1920" id="hack" style="display: none;">
+        <p class="p">Mitre Attack Tests</p>
+
+        <nav class="nav">
+            <ul class="nav-items">
+                <li id="liOne" style="background-color: rgb(249, 246, 238);">
+                    <a style="display:block;" href="~/Attack/Test1">T1115</a>
+                </li>
+                <li id="liTwo" style=" background-color: yellow;">
+                    <a style="display:block;" href="~/Attack/Test2">T1113</a>
+                </li>
+                <li id="liFive" style="background-color: rgb(249, 246, 238); height: 107px ">
+                    <a style="display:block;" href="~/Attack/Index">Geçmiş Ataklar</a>
+                </li>
+            </ul>
+        </nav>
+        <div>
+            <h1 id="headlineTwo" style="display: block;">Test 2 - Ekran Yakalama</h1>
+            <p id="infoTwo" style="display: block;">Hasımlar, hayati bilgilerinizi çalmak için bilgisayarınızın ekran görüntüleri alabilirler (T1113 - Screen Capture).</p>
+            <p id="t2command" style="display: block;">PowerShell Command: "nircmd.exe cmdwait 2000 savescreenshot "./screenshot.png"    -Wait 2 seconds, and then save the current screen to ss.png"</p>
+            @using (Html.BeginForm("RunPowerShellScriptTest2", "Attack", FormMethod.Post))
+            {
+                <table style=" position: absolute; top: 60%; left: 50%; scale: 2; width: 200px;">
+                    <td>
+                        <input type="submit" class="btn btn-default" style="" id="tab-login" />
+                    </td>
+                </table>
+
+            }
+        </div>
+    </div>
+</div>

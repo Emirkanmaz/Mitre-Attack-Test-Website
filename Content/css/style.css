@@ -1,0 +1,302 @@
+.body {
+    background-color: #BB3722;
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+}
+
+.nav {
+    display: flex;
+    width: 350px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.p {
+    position: relative;
+    text-align: left;
+    font-size: 40px;
+    margin-top: 100px;
+    margin-left: 50px;
+    color: #F9F6EE;
+}
+
+.p2 {
+    position: absolute;
+    font-size: 32px;
+    top: 4%;
+    left: 80%;
+    color: yellow;
+}
+
+.nav-items {
+    z-index: 4;
+    list-style: none;
+    margin-bottom: 50px;
+    margin-left: 85px;
+    cursor: pointer;
+}
+
+.nav-items > li {
+    display: block;
+    z-index: 20;
+    border-radius: 25px;
+    background-color: #F9F6EE;
+    padding: 20px;
+    width: 200px;
+    height: 75px;
+    font-size: 24px;
+    font-weight: bolder;
+    text-align: center;
+    margin-top: 32px;
+    cursor: pointer;
+}
+
+footer > small {
+    z-index: 4;
+    color: #F9F6EE;
+    position: absolute;
+    left: 50%;
+    top: 90%;
+    -ms-transform: translate(-50%, 90%);
+    transform: translate(-50%, 90%);
+}
+
+#myForm {
+    z-index: 4;
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    -ms-transform: translate(-50%);
+    transform: translate(-50%);
+
+}
+
+#loginName {
+    height: 50px;
+    font-weight: bolder;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(249,246,238,1) 0%, rgba(187,55,34,1) 100%);
+}
+
+#loginPassword {
+    height: 50px;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(249,246,238,1) 0%, rgba(187,55,34,1) 100%);
+}
+
+#textOne {
+    z-index: 4;
+    color: #F9F6EE;
+    font-weight: bolder;
+}
+
+#textTwo {
+    z-index: 4;
+    color: yellow;
+    font-weight: bolder;
+}
+
+#tab-login {
+    font-weight: bolder;
+    color: #BB3722;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(249,246,238,1) 0%, rgba(187,55,34,1) 100%);
+}
+
+#tab-register {
+    font-weight: bolder;
+    color: #BB3722;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(249,246,238,1) 0%, rgba(187,55,34,1) 100%);
+}
+
+#registerName {
+    height: 50px;
+    color: #BB3722;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(249,246,238,1) 0%, rgba(187,55,34,1) 100%);
+}
+
+#registerUsername {
+    height: 50px;
+    color: #BB3722;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(249,246,238,1) 0%, rgba(187,55,34,1) 100%);
+}
+
+#registerEmail {
+    height: 50px;
+    color: #BB3722;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(249,246,238,1) 0%, rgba(187,55,34,1) 100%);
+}
+
+#registerPassword {
+    height: 50px;
+    color: #BB3722;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(249,246,238,1) 0%, rgba(187,55,34,1) 100%);
+}
+
+#registerRepeatPassword {
+    height: 50px;
+    color: #BB3722;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(249,246,238,1) 0%, rgba(187,55,34,1) 100%);
+}
+
+#button {
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    margin: auto;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(249,246,238,1) 0%, rgba(187,55,34,1) 100%);
+    color: #BB3722;
+}
+
+#buttonTwo {
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    margin: auto;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(249,246,238,1) 0%, rgba(187,55,34,1) 100%);
+    color: #BB3722;
+}
+
+#logo {
+    z-index: 4;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+#hack {
+    position: absolute;
+    top: 10%;
+    left: 0%;
+    height: 800px;
+    z-index: 0;
+    margin-top: 50px;
+}
+
+#labelOne, #labelTwo, #labelThree, #labelFour, #labelFive, #labelSix, #labelSeven{
+    z-index: 4;
+    padding-top: 15px;
+}
+
+#home {
+    z-index: 4;
+    position: absolute;
+    top: 5%;
+    left: 95%;
+}
+
+#infoOne, #infoTwo, #infoThree{
+    position: absolute;
+    display: none;
+    top: 28%;
+    left: 30%;
+    width: 1000px;
+    height: 400px;
+    margin-top: 50px;
+    font-size: 36px;
+    color: #F9F6EE;
+}
+
+#TestImage{
+    position: absolute;
+    scale: 0.5;
+    top: 20%;
+    left: 5%;
+    margin-left: 5px;
+}
+
+#t1command {
+    position: absolute;
+    display: none;
+    top: 29%;
+    left: 84%;
+    width: 250px;
+    height: 120px;
+    margin-top: 50px;
+    font-size: 18px;
+    border-radius: 15px;
+    padding: 15px;
+    border-style: dashed;
+    border-color: black;
+    color: #F9F6EE;
+}
+
+#t2command {
+    position: absolute;
+    display: none;
+    top: 29%;
+    left: 84%;
+    width: 250px;
+    height: 235px;
+    margin-top: 50px;
+    font-size: 18px;
+    border-radius: 15px;
+    padding: 15px;
+    border-style: dashed;
+    border-color: black;
+    color: #F9F6EE;
+}
+
+#headline, #headlineTwo, #headlineThree {
+    position: absolute;
+    display: none;
+    top: 20%;
+    left: 30%;
+    font-size: 48px;
+    color: #F9F6EE;
+}
+
+#ex1 {
+    position: relative;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+#testOneButton, #testTwoButton {
+    position: absolute;
+    z-index: 3;
+    top: 21%;
+    left: 75%;
+    scale: 2;
+    width: 200px;
+}
+
+#fileID {
+    display: block;
+    position: absolute;
+    color: #F9F6EE;
+    top: 28%;
+    left: 77%;
+    z-index: 7;
+}
+
+#table-wrapper {
+    position: relative;
+    bottom: 340px;
+    left: 30%;
+}
+
+#dataTable {
+    height: 400px;
+    overflow: auto;
+    margin-top:20px;
+}
+
+#table-wrapper table {
+    width: 50%;
+
+}
+
+#table-wrapper table * {
+    background:yellow;
+    color:black;
+}
+
+#table-wrapper table thead th .text {
+    position: absolute;
+    top:-20px;
+    z-index:20;
+    height:20px;
+    width:35%;
+    border:1px solid red;
+}

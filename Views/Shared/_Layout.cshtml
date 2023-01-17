@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Project of Web Application Development</title>
+    <link rel="stylesheet" href="~/Content/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/x-icon" href="myicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro&family=Montserrat&display=swap" rel="stylesheet" />
+    <link href="~/Content/css/mdb.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body class="body vsc-initialized">
+    <div id="main">
+        <div>
+            <header>
+                <img src="~/Content/img/mitre_attack_logo.png" width="500px" id="logo">
+
+                <div>
+                    @if (Session["id"] == null)
+                    {
+                        <a href="/Home/Contact" style="top: 5%;left: 90%; position: absolute; width: 120px;" class="nav nav-pills nav-justified mb-3 nav-item nav-link active" id="tab-login">İletişim</a>
+                        <a href="/Home/About" style="top: 5%;left: 83%; position: absolute; width: 120px;" class="nav nav-pills nav-justified mb-3 nav-item nav-link active" id="tab-login">Hakkımızda</a>
+                        <a href="/Home/Index" style="top: 5%;left: 76%; position: absolute; width: 120px;" class="nav nav-pills nav-justified mb-3 nav-item nav-link active" id="tab-login">Ana Sayfa</a>
+                        <a href="/Attack/Details" style="top: 11%;left: 76%; position: absolute; width: 120px;" class="nav nav-pills nav-justified mb-3 nav-item nav-link active" id="tab-login">Ataklar</a>
+                    }
+
+                    @if (Session["id"] != null)
+                    {
+                        <label style="color: yellow; font-weight: bolder; font-family: 'Montserrat', sans-serif; top: 5%; left: 45%; position: absolute; margin-right: 5px; ">@Session["name"].ToString() Kullanıcısı Aktif.</label>
+                        <a href="/Home/Contact" style="top: 5%;left: 90%; position: absolute; width: 120px;" class="nav nav-pills nav-justified mb-3 nav-item nav-link active" id="tab-login">İletişim</a>
+                        <a href="/Home/About" style="top: 5%;left: 83%; position: absolute; width: 120px;" class="nav nav-pills nav-justified mb-3 nav-item nav-link active" id="tab-login">Hakkımızda</a>
+                        <a href="/Attack/Index" style="top: 5%;left: 76%; position: absolute; width: 120px;" class="nav nav-pills nav-justified mb-3 nav-item nav-link active" id="tab-login">TEST</a>
+                        <a href="/Attack/Details" style="top: 11%;left: 76%; position: absolute; width: 120px;" class="nav nav-pills nav-justified mb-3 nav-item nav-link active" id="tab-login">Ataklar</a>
+                        <a href="@Url.Action("LogOut", "Home")" style="top: 11%;left: 90%; position: absolute; width: 120px;" class="nav nav-pills nav-justified mb-3 nav-item nav-link active" id="tab-login">Çıkış</a>
+                        <a href="~/Home/Edit/@Session["id"]" style="top: 11%;left: 83%; position: absolute; width: 120px" class="nav nav-pills nav-justified mb-3 nav-item nav-link active" id="tab-login">Düzenle</a>
+                    }
+                </div>
+            </header>
+
+
+            @RenderBody()
+
+            <footer>
+                <small>Web Application Development Project 2022</small>
+            </footer>
+
+        </div>
+    </div>
+    <script src="~/Content/js/mdb.min.js" type="text/javascript"></script>
+</body>
+</html>
